@@ -7,9 +7,11 @@ pipeline {
         choice(name: "AGENT", choices: ["any", "maven", "nodejs"]) 
     }
 
-    stage ('Version Check') {
+    stages {
+        stage("Build") {
             steps {
                 sh './command.sh ${agent_label}'
             }
         }
-  }
+    }
+}
