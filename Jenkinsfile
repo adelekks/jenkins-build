@@ -4,7 +4,7 @@ pipeline {
     }
 
     parameters {
-        choice(name: "AGENT", choices: ["any", "maven", "nodejs"]) 
+        choice(name: "agent_label", choices: ["any", "maven", "nodejs"]) 
     }
 
     stages {
