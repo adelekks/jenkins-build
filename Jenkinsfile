@@ -16,7 +16,6 @@ pipeline {
 		}
             }
         }
-    }
         stage("Build"){
 	   steps {
               script {
@@ -33,7 +32,8 @@ pipeline {
 			   gv.NodeJSApp()
 			fi
 		     """
-	   }   
-    }
-  }
+	      }   
+           }
+       }
+   }
 }
