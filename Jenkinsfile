@@ -16,7 +16,6 @@ pipeline {
         echo "Cloning repo from github"
         git url: 'https://github.com/adelekks/jenkins-build.git', branch "main"
         }
-    }
         stage("init") {
             steps {
 		script {
@@ -35,5 +34,4 @@ pipeline {
            }
        }
    }
- }
 }
