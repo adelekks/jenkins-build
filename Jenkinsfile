@@ -4,6 +4,9 @@ pipeline {
         label params.agent_label == "any" ? "" : params.agent_label
     }
 
+    tools {
+       maven 'Maven3'
+    }
     parameters {
         choice(name: "agent_label", choices: ["any", "maven", "nodejs"]) 
     }
@@ -21,10 +24,8 @@ pipeline {
               script {
 		     if ("maven" == params.agent_label)
 		         def proc = gv.MavenApp()
-			 def proc = maven_cmd.execute()
 		     if ("nodejs" == params.agent_label)
 		         def proc = gv.NodeJSApp()
-			 def proc = nodejs_cmd.execute()
 	      }   
            }
        }
