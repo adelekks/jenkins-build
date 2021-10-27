@@ -20,9 +20,9 @@ pipeline {
 	   steps {
               script {
 		  if ("maven" == params.agent_label)
-		      gv.MavenApp()
+		      def proc = gv.MavenApp()
 		  if ("nodejs" == params.agent_label)
-		      gv.NodeJSApp()
+		      def proc = gv.NodeJSApp()
 	      }   
            }
        }
