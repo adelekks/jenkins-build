@@ -4,9 +4,6 @@ pipeline {
         label params.agent_label == "any" ? "" : params.agent_label
     }
 
-    tools {
-       maven 'Maven3'
-    }
     parameters {
         choice(name: "agent_label", choices: ["any", "maven", "nodejs"]) 
     }
