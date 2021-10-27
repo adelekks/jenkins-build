@@ -1,3 +1,4 @@
+def gv
 pipeline {
     agent {
         label params.agent_label == "any" ? "" : params.agent_label
@@ -8,12 +9,31 @@ pipeline {
     }
 
     stages {
-        stage("Build") {
+        stage("init") {
             steps {
-                sh 'echo ${agent_label}'
-                sh 'chmod +x command.sh'
-                sh './command.sh ${agent_label}'
+		script {
+		   gv = load "script.groovy"
+		}
             }
         }
     }
+        stage("Build"){
+	   steps {
+              script {
+                  sh """
+		      # if condition is Maven
+			if [ "maven" == "${agent_label}" ];
+			then
+			    gv.MavenApp()
+			fi
+
+			# if condition is Nodejs
+			if [ "nodejs" == "${agent_label}" ];
+			then
+			   gv.NodeJSApp()
+			fi
+		     """
+	   }   
+    }
+  }
 }
