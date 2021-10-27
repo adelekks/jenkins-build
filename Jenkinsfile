@@ -12,7 +12,7 @@ pipeline {
     }
 
     stages {
-        stage(Clone Repo){
+        stage('Clone Repo'){
         echo "Cloning repo from github"
         git url: 'https://github.com/adelekks/jenkins-build.git', branch "main"
         }
