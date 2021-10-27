@@ -21,13 +21,13 @@ pipeline {
               script {
                   sh """
 		      # if condition is Maven
-			if [ "maven" == "${agent_label}" ];
+			if [ -z "${agent_label}" ];
 			then
 			    gv.MavenApp()
 			fi
 
 			# if condition is Nodejs
-			if [ "nodejs" == "${agent_label}" ];
+			if [ -z "${agent_label}" ];
 			then
 			    gv.NodeJSApp()
 			fi
