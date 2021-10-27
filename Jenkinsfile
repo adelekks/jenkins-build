@@ -24,7 +24,7 @@ pipeline {
 			if [ -z "${agent_label}" ];
 			then
 			    gv.MavenApp()
-			fi
+			#fi
 
 			# if condition is Nodejs
 			if [ -z "${agent_label}" ];
