@@ -29,7 +29,7 @@ pipeline {
 			# if condition is Nodejs
 			if [ "nodejs" == "${agent_label}" ];
 			then
-			   gv.NodeJSApp()
+			    gv.NodeJSApp()
 			fi
 		     """
 	      }   
