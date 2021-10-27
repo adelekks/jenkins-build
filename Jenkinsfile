@@ -10,6 +10,7 @@ pipeline {
     stages {
         stage("Build") {
             steps {
+                sh 'chmod +x command.sh'
                 sh './command.sh params.agent_label'
             }
         }
