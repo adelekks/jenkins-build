@@ -10,9 +10,9 @@ pipeline {
     stages {
         stage("Build") {
             steps {
-                sh 'echo params.agent_label'
+                sh 'echo ${agent_label}'
                 sh 'chmod +x command.sh'
-                sh './command.sh params.agent_label'
+                sh './command.sh ${agent_label}'
             }
         }
     }
