@@ -19,10 +19,12 @@ pipeline {
         stage("Build"){
 	   steps {
               script {
-		  if (params.agent_label){
+		  if (maven == params.agent_label)
 		      gv.MavenApp()
-		  if (params.agent_label){
-		      gv.NodeJSApp();
+		  if (nodejs == params.agent_label)
+		      gv.NodeJSApp()
 	      }   
            }
        }
+   }
+}
