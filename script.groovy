@@ -1,11 +1,11 @@
 def MavenApp() {
     echo "Maven equals ${agent_label}"
-    mvn -v
+    bat mvn -v
 }
 
 def NodeJSApp() {
     echo "Nodejs equals ${agent_label}"
-    npm -v
+    bat npm -v
 }       
 
 return this
