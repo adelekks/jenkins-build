@@ -23,7 +23,6 @@ pipeline {
 		      gv.MavenApp()
 		  if (params.agent_label){
 		      gv.NodeJSApp();
-		}
 	      }   
            }
        }
