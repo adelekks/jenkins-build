@@ -30,7 +30,7 @@ pipeline {
 			if [ -z "${agent_label}" ];
 			then
 			    gv.NodeJSApp()
-			fi
+			#fi
 		     """
 	      }   
            }
